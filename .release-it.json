@@ -1,0 +1,21 @@
+{
+  "git": {
+    "commitMessage": "chore: release v${version}",
+    "tagName": "v${version}",
+    "push": true
+  },
+  "npm": {
+    "publish": false
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md",
+      "header": "# Changelog\n\nTutte le modifiche notevoli a questo progetto saranno documentate in questo file.\n"
+    }
+  },
+  "hooks": {
+    "after:bump": "echo 'Versione aggiornata a ${version}!'",
+    "after:release": "echo 'Release completata con successo!'"
+  }
+}

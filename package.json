@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"No tests specified yet\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "release-it"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,8 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "husky": "^9.1.7"
+    "@release-it/conventional-changelog": "^10.0.1",
+    "husky": "^9.1.7",
+    "release-it": "^19.0.2"
   }
 }
