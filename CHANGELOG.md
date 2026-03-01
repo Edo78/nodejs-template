@@ -3,6 +3,10 @@
 Tutte le modifiche notevoli a questo progetto saranno documentate in questo file.
 
 
+## <small>0.2.1 (2026-03-01)</small>
+
+* docs: rewrite README with complete project documentation ([dc58da6](https://github.com/Edo78/nodejs-template/commit/dc58da6))
+
 ## 0.2.0 (2026-03-01)
 
 * ci: add Dependabot configuration for automated dependency updates ([6c11272](https://github.com/Edo78/nodejs-template/commit/6c11272))
