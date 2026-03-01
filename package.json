@@ -1,16 +1,21 @@
 {
-  "name": "template",
+  "name": "nodejs-template",
   "version": "0.1.0",
-  "main": "index.js",
+  "description": "A Node.js project template with git hooks, conventional commits, and automated releases",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
+    "start": "node src/index.js",
     "test": "echo \"No tests specified yet\"",
     "prepare": "husky",
     "release": "release-it"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["template", "nodejs", "boilerplate"],
+  "author": "Edo78",
+  "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
