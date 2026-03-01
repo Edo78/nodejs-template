@@ -1,20 +1,32 @@
-# Dockerfile per sviluppo Node.js con immagine minimale
-FROM node:alpine
+# Build stage
+FROM node:22-alpine AS build
 
-# Imposta la directory di lavoro
 WORKDIR /usr/src/app
 
-# Copia i file package.json e package-lock.json
 COPY package*.json ./
 
-# Installa le dipendenze
-RUN npm install
+RUN npm ci
 
-# Copia il resto dei file dell'applicazione
 COPY . .
 
-# Espone la porta 3000 (modificare se necessario)
+# Production stage
+FROM node:22-alpine
+
+RUN apk add --no-cache dumb-init
+
+WORKDIR /usr/src/app
+
+COPY package*.json ./
+
+RUN npm ci --omit=dev
+
+COPY --from=build /usr/src/app/src ./src
+
+USER node
+
 EXPOSE 3000
 
-# Comando di default (modificare se necessario)
-CMD ["npm", "start"]
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:3000/ || exit 1
+
+CMD ["dumb-init", "node", "src/index.js"]
