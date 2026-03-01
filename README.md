@@ -18,7 +18,7 @@ Un template di progetto Node.js con configurazione git, husky, commitlint e rele
 1. Clona il repository
 2. Installa le dipendenze: `npm install`
 3. Sviluppa la tua applicazione
-4. Fai commit usando il formato conventional commit: 
+4. Fai commit usando il formato conventional commit:
    - `feat: nuova funzionalità`
    - `fix: correzione bug`
    - `docs: aggiornamento documentazione`
@@ -36,6 +36,7 @@ npm run release
 ```
 
 Questo comando:
+
 1. Determina automaticamente il tipo di incremento della versione in base ai commit
 2. Aggiorna il file package.json con la nuova versione
 3. Genera/aggiorna il file CHANGELOG.md

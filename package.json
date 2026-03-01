@@ -10,17 +10,30 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "echo \"No tests specified yet\"",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "prepare": "husky",
     "release": "release-it"
   },
-  "keywords": ["template", "nodejs", "boilerplate"],
+  "keywords": [
+    "template",
+    "nodejs",
+    "boilerplate"
+  ],
   "author": "Edo78",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^10.0.1",
     "@release-it/conventional-changelog": "^10.0.1",
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^17.4.0",
     "husky": "^9.1.7",
+    "prettier": "^3.8.1",
     "release-it": "^19.0.2"
   }
 }
